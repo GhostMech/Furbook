@@ -1,2 +1,3 @@
  # Laravel's vendor folder
  vendor/
+ .env
