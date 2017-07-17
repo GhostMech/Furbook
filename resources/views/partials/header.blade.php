@@ -8,7 +8,7 @@
         <span class="pull-right"><a href="/cats"><h4>Return to Homepage</h4></a>
             <?php $isBreed = explode('/', $_SERVER['REQUEST_URI']); ?>
             @if ($isBreed[2] === 'breed')
-                <span class="pull-right"><a href="/cats/breeds"><h5>Return to Breeds</h5></span>
+                <span class="pull-right"><a href="/cats/breeds"><h5>Return to Cat Breeds</h5></a></span>
             @endif
         @endif
         </div>
