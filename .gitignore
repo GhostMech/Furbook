@@ -1,3 +1,10 @@
- # Laravel's vendor folder
+# Laravel's vendor folder
  vendor/
- .env
+.env
+public/storage
+public/hot
+storage/*.key
+.env.*.php
+.env.php
+Homestead.yaml
+Homestead.json
