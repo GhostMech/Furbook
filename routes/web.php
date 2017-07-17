@@ -46,25 +46,30 @@ Route::get('cats/breeds', function () {
 });
 Route::get('cats/breed/{name?}', function ($name = 'domestic') {
     
+    // Get all the breeds from the DB.
     $breeds = App\Breed::all();
-
+    
+    // Create an array where the key is the breed id, and the value is the breed name.
     foreach ($breeds as $breed) {
-        $names[$breed['id']] = strtolower($breed['name']);
+        $breedNames[$breed['id']] = strtolower($breed['name']);
     }
     
+    // Set some defaults.
+    $name = strtolower($name);
     $breedname = 'Breed Not Found';
+    $cats = [];
     
-    foreach ($names as $key => $value) {
+    // Check if the breed name from the URL exists in our DB.
+    foreach ($breedNames as $key => $value) {
         if ($name === $value) {
-            $breedname = ucfirst($names[$key]);
+            $breedname = ucfirst($breedNames[$key]);
             $breedId = $key;
+            
+            $cats = App\Cat::where('breed_id', '=', $breedId)->get();
         }
     }
-    
-    $cats = App\Cat::where('breed_id', '=', $breedId)->get();
       
-    return view('breed')->with('breedname', $breedname)->with('cats', $cats);
-    
+    return view('breed', ['breedname' => $breedname, 'cats' => $cats]);
 });
 
 
