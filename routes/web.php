@@ -66,10 +66,11 @@ Route::get('cats/breed/{name?}', function ($name = 'domestic') {
             $breedId = $key;
             
             $cats = App\Cat::where('breed_id', '=', $breedId)->get();
+            $catsCount = $cats->count();
         }
     }
       
-    return view('breed', ['breedname' => $breedname, 'cats' => $cats]);
+    return view('breed', ['breedname' => $breedname, 'cats' => $cats, 'catsCount' => $catsCount]);
 });
 
 
