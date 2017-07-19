@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/check_login', function() {
+   return view('check_login'); 
+});
+
 // See https://laravel.com/docs/5.4/mail#introduction
 Route::get('/send_email', function () {
     
@@ -86,11 +90,11 @@ Route::get('cats/breed/{name?}', function ($name = 'domestic') {
     return view('breed', ['breedname' => $breedname, 'cats' => $cats, 'catsCount' => $catsCount]);
 });
 
-
-
-
 Route::get('/bradys', function () {
     $bradys = App\User::all();
     
     return view('bradys')->with('bradys', $bradys);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
