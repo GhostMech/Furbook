@@ -1,5 +1,7 @@
 <?php
 
+use Facades\App\Services\Twitter;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,16 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// See https://laravel.com/docs/5.4/mail#introduction
+Route::get('/send_email', function () {
+    
+    $catMail = new App\Mail\Catmail();
+    
+    Mail::to(App\Cat::first()->owner_email)->send($catMail);
+    
+    return 'Mail has been sent';
 });
 
 //Route::resource('/cats', 'CatsController');
