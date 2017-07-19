@@ -20,7 +20,8 @@ Route::get('/', function () {
 // See https://laravel.com/docs/5.4/mail#introduction
 Route::get('/send_email', function () {
     
-    $catMail = new App\Mail\Catmail();
+    $allCats = App\Cat::all();
+    $catMail = new App\Mail\Catmail($allCats);
     
     Mail::to(App\Cat::first()->owner_email)->send($catMail);
     
