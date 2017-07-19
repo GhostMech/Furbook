@@ -8,7 +8,9 @@
 <body>
     <div class="container">
         <div class="page-header">
-            @include('partials.header')
+            @if (! empty($_SERVER))
+                @include('partials.header')
+            @endif
         </div>
         @if (Session::has('success'))
             <div class="alert alert-success">
