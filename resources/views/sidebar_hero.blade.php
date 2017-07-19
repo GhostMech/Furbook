@@ -1479,10 +1479,10 @@ body.outlook p {
                             <table>
                               <tr>
                                 <th>
-                                  <h3>Hello, Han Fastolfe</h3>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nobis velit, aliquid pariatur at fugit. Omnis at quae, libero iusto quisquam animi blanditiis neque, alias minima corporis, ab in explicabo?</p>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dignissimos voluptas minus, cupiditate voluptatem, voluptatum iste molestiae consectetur temporibus quae dolore nam possimus reprehenderit blanditiis laborum
-                                    iusto sit. Perspiciatis, dolor.</p>
+                                  <h3>Here are all the cats:</h3>
+                                    @foreach ($cats as $cat)
+                                        <p>{{ $cat->name }}</p>
+                                    @endforeach
                                   <table class="callout">
                                     <tr>
                                       <th class="callout-inner secondary"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quas optio totam quidem, placeat sunt, sit iusto fugit. Harum omnis deleniti enim nihil iure, quis laudantium veniam velit animi debitis. <a href="#">Click It!</a>                                        </th>
