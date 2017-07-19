@@ -6,26 +6,19 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Collection;
-use App\Cat;
 
-class CatMail extends Mailable
+class TextMail extends Mailable
 {
     use Queueable, SerializesModels;
-    
-    /**
-     * Use the App\Cat model
-     */
-     public $cats;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Collection $cats)
+    public function __construct()
     {
-        $this->cats = $cats;
+        //
     }
 
     /**
@@ -35,7 +28,7 @@ class CatMail extends Mailable
      */
     public function build()
     {
-        return $this->from('garyhowardpctech@yahoo.com')
-                    ->view('sidebar_hero');
+        return $this->view('cat_mail')
+                    ->text('cat_mail');
     }
 }
