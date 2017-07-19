@@ -14,7 +14,7 @@ class CatMail extends Mailable
     use Queueable, SerializesModels;
     
     /**
-     * Use the App\Cat model
+     * Use the Illuminate\Support\Collection class.
      */
      public $cats;
 
