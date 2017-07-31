@@ -1,5 +1,5 @@
 # Laravel's vendor folder
- vendor/
+vendor/
 .env
 public/storage
 public/hot
