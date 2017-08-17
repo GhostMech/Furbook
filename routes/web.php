@@ -42,7 +42,7 @@ Route::get('/cats', function () {
 
 Route::get('cats/{id}', function($id) {
     $cat = App\Cat::find($id);
-    
+        
     return view('cat')->with('cat', $cat);
 })->where('id', '[0-9]+');
 
@@ -90,11 +90,6 @@ Route::get('cats/breed/{name?}', function ($name = 'domestic') {
     return view('breed', ['breedname' => $breedname, 'cats' => $cats, 'catsCount' => $catsCount]);
 });
 
-Route::get('/bradys', function () {
-    $bradys = App\User::all();
-    
-    return view('bradys')->with('bradys', $bradys);
-});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
