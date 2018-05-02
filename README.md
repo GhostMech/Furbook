@@ -6,6 +6,8 @@ the models, migrations, controllers, and views are created by me.
 
 (For Laravel 5.4+)
 
+##### You will need: PHP, Composer, a database, and a web server. ######
+
 **Instructions:**
 
 1. Clone this repository to your computer.
