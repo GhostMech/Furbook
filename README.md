@@ -6,7 +6,7 @@ the models, migrations, controllers, and views are created by me.
 
 (For Laravel 5.4+)
 
-##### You will need: PHP, Composer, a database, and a web server. ######
+##### You will need: PHP, Composer, a database(MySQL), and a web server. ######
 
 **Instructions:**
 
